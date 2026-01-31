@@ -3,7 +3,7 @@
 [![PyPI-Server](https://img.shields.io/pypi/v/genecover.svg)](https://pypi.org/project/genecover/)
 [![Project generated with PyScaffold](https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold)](https://pyscaffold.org/)
 
-A combinatorial approach for **label-free marker gene selection** from scRNA-seq and spatial transcriptomics data, using gene–gene correlation and set cover.
+A combinatorial approach for **label-free marker gene selection** from scRNA-seq and spatial transcriptomics data, using gene-gene correlation and set cover.
 
 This repository is a **Python packaging + PyPI-friendly** version of the original GeneCover pipeline, keeping the algorithm behavior as close as possible to the original implementation while supporting optional solver backends (uses lazy loading).
 
