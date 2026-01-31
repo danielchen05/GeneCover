@@ -34,6 +34,7 @@ Original resources:
 - Original docs site: https://genecover.readthedocs.io/
 
 ---
+This package exists to provide a lightweight, pip-installable interface to GeneCover without requiring users to clone the original repository or configure solvers unless needed.
 
 ## Features
 
@@ -49,9 +50,18 @@ Original resources:
 
 ---
 
+## Compatibility with the original GeneCover implementation
+
+- The core GeneCover algorithm, thresholds, and optimization logic are preserved.
+- `gene_gene_correlation`, `GeneCover`, and `Iterative_GeneCover` follow the same behavior and defaults as the original implementation.
+- Differences from the original repository are limited to **packaging and dependency handling** (lazy imports, optional solver extras).
+- Results should be directly comparable to those obtained using the original GeneCover code.
+
+---
+
 ## Installation
 
-### Install from PyPI (recommended)
+### Install from PyPI
 ```bash
 pip install genecover
 ```
@@ -61,12 +71,46 @@ This installs the core package and supports the Greedy backend (no external solv
 ### Optional solver backends
 
 To use integer-programming solvers, install extras:
-
-# Gurobi backend (requires a valid Gurobi license)
+#### Gurobi backend (requires a valid Gurobi license)
+```bash
 pip install "genecover[gurobi]"
+```
 
-# SCIP backend (via PySCIPOpt)
+#### SCIP backend (via PySCIPOpt)
+```bash
 pip install "genecover[scip]"
+```
 
-# Install all optional backends
+#### Install all optional backends
+```bash
 pip install "genecover[all]"
+```
+---
+
+## Usage and QuickStart
+For full tutorials and usage examples, see the original GeneCover documentation. The function names should be the same, for instance:
+```python
+from genecover import gene_gene_correlation, GeneCover, Iterative_GeneCover
+```
+---
+
+## Project Status
+
+This package focuses on: a clean Python API (genecover), reproducibility with the original one-file pipeline, and solver backends as optional dependencies.
+The interface may evolve as packaging/testing/docs are improved.
+
+---
+
+## Contributing
+
+Bug reports, feature requests, and GitHub issues or pull requests are welcome.
+
+Please submit issues and pull requests via the GitHub repository:
+https://github.com/danielchen05/GeneCover
+
+---
+
+## Note
+
+This project has been set up using PyScaffold 4.6.
+For details and usage information on PyScaffold see https://pyscaffold.org/.
