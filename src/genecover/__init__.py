@@ -14,3 +14,14 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 finally:
     del version, PackageNotFoundError
+
+# Public API (lightweight imports only)
+from .api import GeneCover, Iterative_GeneCover  # noqa: E402
+from .correlation import gene_gene_correlation  # noqa: E402
+
+__all__ = [
+    "GeneCover",
+    "Iterative_GeneCover",
+    "gene_gene_correlation",
+    "__version__",
+]
